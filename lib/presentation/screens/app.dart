@@ -1,9 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:codelessly_interview/presentation/constants/constants.dart';
+import 'package:codelessly_interview/presentation/screens/homepage/homepage.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graphics_notebook/presentation/constants/constants.dart';
+
+import '../../router.gr.dart';
 
 class MyApp extends StatelessWidget {
   void init(BuildContext context) {
@@ -12,14 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [],
-      child: MaterialApp(
+    // return MultiBlocProvider(
+    //   providers: [],
+    //   child: 
+      return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: APP_NAME,
           home: Builder(builder: (context) {
             /// [return Home Page]
-            // return Homepage();
+            return Homepage();
           }),
           builder: ExtendedNavigator.builder(
             router: AutoRouter(),
@@ -27,7 +30,8 @@ class MyApp extends StatelessWidget {
               init(context);
               return child;
             },
-          )),
-    );
+          )
+          );
+    // );
   }
 }

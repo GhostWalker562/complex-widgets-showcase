@@ -1,11 +1,27 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:codelessly_interview/presentation/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:graphics_notebook/presentation/constants/constants.dart';
 
 enum clr { DARK, LIGHT, ACCENT }
-enum siz { TITLE, SUBTITLE, HEADER, ERROR, LARGE, SMALL }
+
+/// __GIANTTITLE__ = 72
+///
+/// __TITLE__ = 64
+/// 
+/// __SUBTITLE__ = 32
+/// 
+/// __HEADER__ = 24
+/// 
+/// __ERROR__ = 24
+/// 
+/// __LARGE__ = 18
+/// 
+/// __SMALL__ = 16
+/// 
+/// __[DEFAULT]__ = 18
+enum siz {GIANTTITLE,  TITLE, SUBTITLE, HEADER, ERROR, LARGE, SMALL }
 
 // ignore: must_be_immutable
 class CustomText extends StatelessWidget {
@@ -15,7 +31,7 @@ class CustomText extends StatelessWidget {
       this.color,
       this.opacity = 1,
       this.weight,
-      this.textAlign})
+      this.textAlign, this.margin, this.maxLines})
       : super(key: key);
 
   final siz size;
@@ -24,6 +40,8 @@ class CustomText extends StatelessWidget {
   final FontWeight weight;
   final double opacity;
   final TextAlign textAlign;
+  final EdgeInsets margin;
+  final int maxLines;
 
   double fontSize;
   Color appliedColor;
@@ -35,11 +53,14 @@ class CustomText extends StatelessWidget {
 
   void applyFontSize() {
     switch (size) {
+      case siz.GIANTTITLE:
+        fontSize = 72;
+        break;
       case siz.TITLE:
         fontSize = 64;
         break;
       case siz.HEADER:
-        fontSize = 38;
+        fontSize = 32;
         break;
       case siz.LARGE:
         fontSize = 24;
@@ -77,15 +98,19 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     modulate();
-    return AutoSizeText(
-      text,
-      textAlign: textAlign ?? TextAlign.left,
-      overflow: TextOverflow.fade,
-      style: GoogleFonts.sourceCodePro(
-        color: appliedColor.withOpacity(opacity),
-        fontSize:
-            ScreenUtil().setSp(fontSize + 0.05.wp, allowFontScalingSelf: true),
-        fontWeight: weight,
+    return Container(
+      margin: margin,
+      child: AutoSizeText(
+        text,
+        maxLines: maxLines,
+        textAlign: textAlign ?? TextAlign.left,
+        overflow: TextOverflow.fade,
+        style: GoogleFonts.rubik(
+          color: appliedColor.withOpacity(opacity),
+          fontSize:
+              ScreenUtil().setSp(fontSize + 0.1.wp, allowFontScalingSelf: true),
+          fontWeight: weight,
+        ),
       ),
     );
   }

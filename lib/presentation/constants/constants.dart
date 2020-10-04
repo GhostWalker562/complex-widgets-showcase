@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 ///
@@ -15,13 +14,14 @@ const FONTCOLORS = const [
   Color(0xFfF5F7FF),
 ];
 
-// const PALETTE = const [
-//   Color(0xFF5465FF),
-//   Color(0xFF788BFF),
-//   Color(0xFF9BB1FF),
-//   Color(0xFFBFD7FF),
-//   Color(0xFFE2FDFF),
-// ];
+const PALETTE = const [
+  Color(0xff6CC2BD),
+  Color(0xff5A809E),
+  Color(0xff7C79A2),
+  Color(0xffF57D7C),
+  Color(0xffFFC1A6),
+  Color(0xffFEE4C4),
+];
 
 // const GRADIENTS = const [
 //   LinearGradient(colors: [
