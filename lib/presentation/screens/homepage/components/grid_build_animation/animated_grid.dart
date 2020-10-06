@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AnimatedGrid extends StatelessWidget {
   const AnimatedGrid({Key key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
