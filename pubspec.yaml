@@ -20,21 +20,8 @@ dependencies:
 
   # development
   flutter_screenutil: ^2.3.1
-  uuid: ^2.2.0
-  conditional_builder: ^1.0.2
-  bot_toast: ^3.0.1
-  auto_route: ^0.6.7
-  flutter_webview_plugin: ^0.3.11
-  permission_handler: ^5.0.1+1
-  cached_network_image: ^2.2.0+1
-  carousel_slider: ^2.2.1
   google_fonts: ^1.1.0
-  flutter_svg: ^0.18.1
-  url_launcher: ^5.7.2
   simple_animations: ^2.2.1
-  visibility_detector: ^0.1.5
-  keyboard_visibility: ^0.5.6
-
 
   # State Management
   get_it: ^4.0.4
@@ -44,13 +31,7 @@ dependencies:
   json_serializable: ^3.4.1
 
   # ui
-  dotted_border: ^1.0.6
   auto_size_text: ^2.1.0
-  flutter_spinkit: ^4.1.2+1
-  flutter_page_transition: ^0.1.6
-  avatar_glow: ^1.2.0
-  snapping_sheet: ^2.0.1
-  animate_do: ^1.7.3
 
   # features
 
